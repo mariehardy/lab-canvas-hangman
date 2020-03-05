@@ -89,8 +89,8 @@ class HangmanCanvas {
     } else if (errorsLeft === 3) {
       this.context.beginPath()
       var radius = 30 // Arc radius
-      var startAngle =  Math.PI // Start point on circle
-      var endAngle = Math.PI / 2 // End point on circle
+      var startAngle =  0 // Start point on circle
+      var endAngle = Math.PI * 2 // End point on circle
       // True reverses the other direction 
       this.context.arc(300, 190, radius, startAngle, endAngle, false)
       this.context.stroke()
@@ -116,10 +116,17 @@ class HangmanCanvas {
   }
 
   gameOver() {
-    // ... your code goes here
+    // this.context.clearRect(0, 0, 800, 1200)
+    let img = new Image();
+    img.src = "../images/gameover.png"
+    this.context.drawImage(img, 100, 300, 570, 240);
+
   }
 
   winner() {
-    // ... your code goes here
+    // this.context.clearRect(0, 0, 800, 1200)
+    let img = new Image();
+    img.src = "../images/awesome.png"
+    this.context.drawImage(img, 100, 300, 372, 618);
   }
 }
